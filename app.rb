@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-    "Bienvenido"
+    erb :playpreguntas
 end
