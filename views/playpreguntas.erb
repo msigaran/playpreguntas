@@ -5,8 +5,18 @@
 		<center>
 			<h1>Bienvenido a PlayPreguntas</h1>
 			
-			<form method="POST" action="/resultado">
-				respuesta: <input type="text" name="respuesta"/>
+			<h2 id="pregunta">¿Quien dijo: <%= @primeraPregunta %>?</h2>
+			<form method="POST" action="/playpreguntas">
+				<table>
+					<tr>
+						<td>respuesta</td>
+						<td><input type="text" name="respuesta"/></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Responder" /></td>
+					</tr>
+				</table>
+				<h3>Tu respuesta fue <%= @resultado %></h3>
 			</form>
 		</center>
 	</body>
