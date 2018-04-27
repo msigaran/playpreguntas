@@ -4,14 +4,8 @@ require './lib/Preguntas.rb'
 get '/' do
 	@@preguntas = Preguntas.new
 	@primeraPregunta = @@preguntas.pregunta
-	@opciones = ""
-	opcion = ["Jorge", "Milton", "Charles Chaplin"]
-	@i =1
-	opcion.each do |valor|
-		
-		@opciones += "<input type='radio' name='opcion' value='"+valor+"'/>"+ valor +"<br>"
-		@i+=1
-	end
+	@opciones = armar_opciones
+	@puntos = @@preguntas.puntaje
 	
     erb :playpreguntas
 end
@@ -30,7 +24,7 @@ post '/playpreguntas' do
 	@primeraPregunta = @@preguntas.pregunta
 	
 	@opciones = armar_opciones
-	
+	@puntos = @@preguntas.puntaje
 
 	erb :playpreguntas
 end

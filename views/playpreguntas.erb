@@ -15,23 +15,34 @@
 		</script>
 	</head>
 	<body>
-		<center>
-			<h1>Bienvenido a PlayPreguntas</h1>
+		<div id="contenedor" style="width:1200px; text-aling:center; margin-left:5%;">
+			<center>
+				<h1>Bienvenido a PlayPreguntas</h1>
 
 			
-			<h2 id="pregunta">¿Quien dijo: <%= @primeraPregunta %>?</h2>
-			<form method="POST" action="/playpreguntas" id="formulario">
-				<div>
-					<fieldset>
-						<legend>Opciones</legend>
-						<%= @opciones %>
-						<input type="submit" value="Responder" />
-					</fieldset>
-				</div>
-				<h3><%= @resultado %></h3>
-				<input type="hidden" name="respuesta" id="respuesta" />
-			</form>
-
-		</center>
+				<h2 id="pregunta">¿Quien dijo: <%= @primeraPregunta %>?</h2>
+			</center>
+			<div style="width:500px; margin-left:30%">
+				<fieldset>
+					<legend>Opciones</legend>
+					<div style="width:50%">
+						<form method="POST" action="/playpreguntas" id="formulario">
+							<div>
+							
+									<%= @opciones %>
+									<input type="submit" value="Responder" />
+								
+							</div>
+							<h3><%= @resultado %></h3>
+							<input type="hidden" name="respuesta" id="respuesta" />
+						</form>
+					</div>
+					<div style="width:50%">
+						<h3><%= @puntos %></h3>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		
 	</body>
 </html>
