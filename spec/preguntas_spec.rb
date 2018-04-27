@@ -29,4 +29,32 @@ describe "JUEGO PREGUNTAS" do
  
 	end
 
+	it "lectura de la primeras respuestas" do
+		respuesta=Preguntas.new
+		respuesta.respuestas.should == ["Charles Chaplin", "Albert Eintein", "Paulo Cohelo"] 
+	end
+	it "Leer segunda pregunta" do
+		pregunta = Preguntas.new
+		pregunta.nuevapregunta
+		pregunta.pregunta.should == "Nunca confíes en un ordenador que no puedas lanzar por una ventana" 
+	end
+	it "lectura de la segunda respuestas" do
+		respuesta=Preguntas.new
+		respuesta.nuevapregunta
+		respuesta.respuestas.should == ["Steve Wozniak","Charles Chaplin", "Albert Eintein"]
+	end
+	it "valida respuesta correcta de la segunda pregunta" do
+		respuesta=Preguntas.new
+		respuesta.nuevapregunta
+		respuesta.respuesta_correcta "Steve Wozniak" 
+		respuesta.envioEvaluacionrespuesta.should == 1
+	end
+	it "valida segunda respuesta incorrecta" do
+		respuesta = Preguntas.new
+		respuesta.nuevapregunta
+		respuesta.respuesta_correcta "Charles Chaplin" 
+		respuesta.envioEvaluacionrespuesta.should == 0
+ 
+	end
+
 end
