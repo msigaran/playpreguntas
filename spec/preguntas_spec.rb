@@ -54,7 +54,25 @@ describe "JUEGO PREGUNTAS" do
 		respuesta.nuevapregunta
 		respuesta.respuesta_correcta "Charles Chaplin" 
 		respuesta.envioEvaluacionrespuesta.should == 0
- 
-	end
+ 	end
+
+	it "inicia Juego puntuación" do
+		respuesta = Preguntas.new
+		respuesta.puntaje.should == 0
+ 	end
+
+	it "acierta una respuesta" do
+		respuesta = Preguntas.new
+		respuesta.respuestacorrecta 
+		respuesta.puntaje.should == 1
+ 	end
+
+
+	it "acierta dosveces respuesta" do
+		respuesta = Preguntas.new
+		respuesta.respuestacorrecta
+		respuesta.respuestacorrecta 
+		respuesta.puntaje.should == 2
+ 	end
 
 end
