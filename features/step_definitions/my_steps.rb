@@ -10,8 +10,9 @@ Then(/^Veo label de "(.*?)"$/) do |text2|
   last_response.body.should =~ /#{text2}/m
 end
 
-When(/^Presiono el boton "(.*?)"$/) do |name|
-  click_button(name)
+When(/^respondo "(.*?)"$/) do |respondo|
+  fill_in("respuesta", :with => respondo)
+  click_button("Responder")
 end
 
 Then(/^Deberia ver "(.*?)"$/) do |text|
