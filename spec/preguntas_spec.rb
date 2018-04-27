@@ -74,5 +74,25 @@ describe "JUEGO PREGUNTAS" do
 		respuesta.respuestacorrecta 
 		respuesta.puntaje.should == 2
  	end
+	
+	it "Gana el Juego" do
+		respuesta = Preguntas.new
+		respuesta.respuestacorrecta
+		respuesta.respuestacorrecta 
+		respuesta.respuestacorrecta
+		respuesta.respuestacorrecta 
+		respuesta.respuestacorrecta
+		respuesta.respuestacorrecta  
+		respuesta.respuestacorrecta
+		respuesta.puntaje.should == 7
+	end
+	it "ganador de juego " do 
+			
+		pregunta = Preguntas.new
+		pregunta.ganador
+		pregunta.mensaje_inicio.should == "Has ganado el Juego" 
+	end 
+
+
 
 end
