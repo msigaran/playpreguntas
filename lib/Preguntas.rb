@@ -2,6 +2,7 @@ class Preguntas
 	def initialize
 		@Inicio="Buena suerte!!!."
 		@@IndicePregunta=0
+		@puntos=0
 		@TodasRespuestascorrecta=""
 		@TodasPreguntas= ["Todos somos aficionados. La vida es tan corta que no da para más", 
 				  "Nunca confíes en un ordenador que no puedas lanzar por una ventana",
@@ -32,6 +33,7 @@ class Preguntas
 	def respuesta_correcta respuestasel
 		if  respuestasel==respuesta
 			@TodasRespuestascorrecta=1
+			respuestacorrecta
 		else
 			@TodasRespuestascorrecta=0
 		end 
@@ -49,5 +51,12 @@ class Preguntas
 		return @@IndicePregunta=@@IndicePregunta+1
 	end
 	
+	def puntaje 
+		return @puntos
+	end 
+
+	def respuestacorrecta
+		return @puntos+=1
+	end 
 
 end
