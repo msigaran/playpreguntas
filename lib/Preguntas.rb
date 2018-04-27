@@ -9,13 +9,15 @@ class Preguntas
 				  "El ordenador nació para resolver problemas que antes no existían",
 				  "El software es un gas: se expande hasta llenar su contenedor",
 				  "No temo a los ordenadores; lo que temo es quedarme sin ellos",
-				  "Los estándares son siempre obsoletos. Eso es lo que los hace estándares"]
+				  "Los estándares son siempre obsoletos. Eso es lo que los hace estándares",
+				  "las partes de un ordenador que pueden ser pateadas"]
 		@TodasRespuestas= [["Charles Chaplin", "Albert Eintein", "Paulo Cohelo"],
 				   ["Steve Wozniak","Charles Chaplin", "Albert Eintein"],
 				   ["Bill Gates","Albert Eintein","Stephen Hawking"],
 				   ["Nathan Myhrvold","Charles Chaplin","Bill Gates"],
 				   ["Isaac Asimov","Bill Gates", "Steve Wozniak"],
-				   ["Alan Bennett","Charles Chaplin","Bill Gates"]]
+				   ["Alan Bennett","Charles Chaplin","Bill Gates"],
+				   ["Jeff Pesis","Bill Gates","Charles Chaplin"]]
 		
 	end 
 	def mensaje_inicio 
@@ -36,6 +38,7 @@ class Preguntas
 			respuestacorrecta
 		else
 			@TodasRespuestascorrecta=0
+			puntajecero
 		end 
 	end
 
@@ -56,7 +59,21 @@ class Preguntas
 	end 
 
 	def respuestacorrecta
+		if @puntos==6 
+		    ganador
+		end 
 		return @puntos+=1
 	end 
+
+
+	def puntajecero 
+		return @puntos==0
+	end 
+
+	def ganador 
+		@Inicio="Has ganado el Juego"
+		mensaje_inicio 
+	end 
+
 
 end
