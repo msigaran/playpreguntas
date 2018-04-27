@@ -3,8 +3,17 @@ class Preguntas
 		@Inicio="Buena suerte!!!."
 		@TodasRespuestascorrecta=""
 		@TodasPreguntas= ["Todos somos aficionados. La vida es tan corta que no da para más", 
-				  "Nunca confíes en un ordenador que no puedas lanzar por una ventana"]
-		@TodasRespuestas= ["Charles Chaplin", "Albert Eintein","Paulo Cohelo","Charles Chaplin", "Albert Eintein","Steve Wozniak"]
+				  "Nunca confíes en un ordenador que no puedas lanzar por una ventana",
+				  "El ordenador nació para resolver problemas que antes no existían",
+				  "El software es un gas: se expande hasta llenar su contenedor",
+				  "No temo a los ordenadores; lo que temo es quedarme sin ellos",
+				  "Los estándares son siempre obsoletos. Eso es lo que los hace estándares"]
+		@TodasRespuestas= ["Charles Chaplin", "Albert Eintein", "Paulo Cohelo",
+				   "Steve Wozniak","Charles Chaplin", "Albert Eintein",
+				   "Bill Gates","Albert Eintein","Stephen Hawking",
+				   "Nathan Myhrvold","Charles Chaplin","Bill Gates",
+				   "Isaac Asimov","Bill Gates", "Steve Wozniak",
+				   "Alan Bennett","Charles Chaplin","Bill Gates"]
 	end 
 	def mensaje_inicio 
 		return @Inicio
