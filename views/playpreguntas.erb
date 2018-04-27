@@ -1,5 +1,18 @@
 <html>
 	<head>
+		<script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#formulario input').on('change', function() {
+   					$("#respuesta").val(($('input[name=opcion]:checked', '#formulario').val())); 
+				});
+			});
+			
+		</script>
 	</head>
 	<body>
 		<center>
@@ -7,17 +20,16 @@
 
 			
 			<h2 id="pregunta">¿Quien dijo: <%= @primeraPregunta %>?</h2>
-			<form method="POST" action="/playpreguntas">
-				<table>
-					<tr>
-						<td>respuesta</td>
-						<td><input type="text" name="respuesta"/></td>
-					</tr>
-					<tr>
-						<td><input type="submit" value="Responder" /></td>
-					</tr>
-				</table>
+			<form method="POST" action="/playpreguntas" id="formulario">
+				<div>
+					<fieldset>
+						<legend>Opciones</legend>
+						<%= @opciones %>
+						<input type="submit" value="Responder" />
+					</fieldset>
+				</div>
 				<h3><%= @resultado %></h3>
+				<input type="hidden" name="respuesta" id="respuesta" />
 			</form>
 
 		</center>

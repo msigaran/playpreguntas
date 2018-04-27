@@ -4,6 +4,15 @@ require './lib/Preguntas.rb'
 get '/' do
 	preguntas = Preguntas.new
 	@primeraPregunta = preguntas.pregunta
+	@opciones = ""
+	opcion = ["Jorge", "Milton", "Charles Chaplin"]
+	@i =1
+	opcion.each do |valor|
+		
+		@opciones += "<input type='radio' name='opcion' value='"+valor+"'/>"+ valor +"<br>"
+		@i+=1
+	end
+	
     erb :playpreguntas
 end
 
@@ -18,5 +27,15 @@ post '/playpreguntas' do
 	end
 
 	@primeraPregunta = playPreguntas.pregunta
+
+	@opciones = ""
+	opcion = ["Jorge", "Milton", "Charles Chaplin"]
+	@i =1
+	opcion.each do |valor|
+		
+		@opciones += "<input type='radio' name='opcion' value='"+valor+"'/>"+ valor +"<br>"
+		@i+=1
+	end
+
 	erb :playpreguntas
 end
