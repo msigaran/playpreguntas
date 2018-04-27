@@ -3,7 +3,7 @@ require './lib/Preguntas.rb'
 
 get '/' do
 	preguntas = Preguntas.new
-	@primeraPregunta = preguntas.preguntas
+	@primeraPregunta = preguntas.pregunta
     erb :playpreguntas
 end
 
