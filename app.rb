@@ -12,10 +12,11 @@ post '/playpreguntas' do
 	playPreguntas = Preguntas.new
 	
 	if playPreguntas.respuesta_correcta(respuesta) == 1 then
-		@resultado = "correcta"
+		@resultado = "Tu respuesta fue correcta"
 	else
-		@resultado = "erronea"
+		@resultado = "Tu respuesta fue erronea"
 	end
 
+	@primeraPregunta = playPreguntas.pregunta
 	erb :playpreguntas
 end

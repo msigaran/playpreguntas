@@ -4,7 +4,7 @@ class Preguntas
 		@TodasRespuestascorrecta=""
 		@TodasPreguntas= ["Todos somos aficionados. La vida es tan corta que no da para más", 
 				  "Nunca confíes en un ordenador que no puedas lanzar por una ventana"]
-		@TodasRespuestas= ["Charles Chaplin", "Albert Eintein","Paulo Cohelo","Charles Chaplin", "Albert Eintein","Steve Wozniak" ]
+		@TodasRespuestas= ["Charles Chaplin", "Albert Eintein","Paulo Cohelo","Charles Chaplin", "Albert Eintein","Steve Wozniak"]
 	end 
 	def mensaje_inicio 
 		return @Inicio
