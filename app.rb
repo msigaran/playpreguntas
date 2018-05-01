@@ -6,7 +6,7 @@ get '/' do
 	@primeraPregunta = @@preguntas.pregunta
 	@opciones = armar_opciones
 	@puntos = @@preguntas.puntaje
-	
+	@estado = 0
     erb :playpreguntas
 end
 
@@ -23,10 +23,16 @@ post '/playpreguntas' do
 	@@preguntas.nuevapregunta
 	@primeraPregunta = @@preguntas.pregunta
 	
-	@opciones = armar_opciones
-	@puntos = @@preguntas.puntaje
-
-	erb :playpreguntas
+	
+	
+	if @@preguntas.mensaje_inicio == "Has ganado el Juego" then
+		erb :ganaste
+	else
+		@estado = 1
+		@opciones = armar_opciones
+		@puntos = @@preguntas.puntaje
+		erb :playpreguntas
+	end
 end
 
 def armar_opciones 

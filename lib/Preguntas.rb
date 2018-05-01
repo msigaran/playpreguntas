@@ -59,7 +59,7 @@ class Preguntas
 	end 
 
 	def respuestacorrecta
-		if @puntos==6 
+		if @puntos==6 then
 		    ganador
 		end 
 		return @puntos+=1

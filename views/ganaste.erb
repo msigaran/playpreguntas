@@ -5,7 +5,7 @@
 				border:10px solid #36a7ed; 
 				border-radius:25px 0px 25px 0px;
 				padding:70px;
-				color:#f42318;
+				color:#39cc22;
 				posiotion:absolute;
 			}
 
@@ -57,43 +57,15 @@ $("#juego").addClass("animated").addClass("slideInDown").removeClass("oculto");
 		</script>
 	</head>
 	<body>
-		
 		<div class="container-fluid">
-			<div id="Bienvenida" class="bienvenida col-lg-6 col-md-6 col-sm-12 col-xs-12 offset-lg-3 offset-md-3 oculto">
+			<div class="bienvenida col-lg-6 col-md-6 col-sm-12 col-xs-12 offset-lg-3 offset-md-6">
 				<center>
-					<h1 class="">Bienvenido a PlayPreguntas</h1>
-					<button id="iniciar" type="button" class="btn btn-success btn-lg">Iniciar</button>
+					<h1>Juego terminado, has ganado</h1>
+					<a class="btn btn-lg btn-success" href="http://localhost:4567/">Reiniciar</a>
 				</center>
 			</div>
-
-			<div id="juego" class="col-lg-6 col-md-6 offset-lg-3 offset-md-3 oculto">
-				<h2 id="pregunta">¿Quien dijo: <%= @primeraPregunta %>?</h2>
-			
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<fieldset>
-						<legend>Opciones</legend>
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<form method="POST" action="/playpreguntas" id="formulario">
-									<div>
-										<%= @opciones %>
-										<input type="submit" value="Responder" />	
-									</div>
-									<h3><%= @resultado %></h3>
-									<input type="hidden" name="respuesta" id="respuesta" />
-									<input type="hidden" name="estado" id="estado" value='<%= @estado %>' />
-								</form>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<center>
-									<h2>Puntaje</h2>
-									<h2><%= @puntos %></h2>
-								</center>
-							</div>
-						</div>
-					</fieldset>
-				</div>
-			</div>
 		</div>
+	
+		
 	</body>
 </html>
