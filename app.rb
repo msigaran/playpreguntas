@@ -21,11 +21,18 @@ post '/playpreguntas' do
 	end
 
 	@@preguntas.nuevapregunta
-	@primeraPregunta = @@preguntas.pregunta
+
+	if @@preguntas.indice_pregunta < 7 then 
+		@primeraPregunta = @@preguntas.pregunta
+
+	else 
+		@puntos = @@preguntas.puntaje
+		erb :ganaste
+	end
 	
 	
-	
-	if @@preguntas.mensaje_inicio == "Has ganado el Juego" then
+	if @@preguntas.mensaje_inicio == "Fin del Juego" then
+		@puntos = @@preguntas.puntaje
 		erb :ganaste
 	else
 		@estado = 1

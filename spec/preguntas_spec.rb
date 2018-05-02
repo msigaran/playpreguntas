@@ -86,13 +86,32 @@ describe "JUEGO PREGUNTAS" do
 		respuesta.respuestacorrecta
 		respuesta.puntaje.should == 7
 	end
+
+	it "Fin del Juego" do 
+			
+		pregunta = Preguntas.new
+		
+		pregunta.nuevapregunta
+		pregunta.nuevapregunta
+		pregunta.nuevapregunta
+		pregunta.nuevapregunta
+		pregunta.nuevapregunta
+		pregunta.nuevapregunta
+		pregunta.finjuego
+		pregunta.mensaje_inicio.should == "Fin del Juego" 
+	end 
+
 	it "ganador de juego " do 
 			
 		pregunta = Preguntas.new
 		pregunta.ganador
-		pregunta.mensaje_inicio.should == "Has ganado el Juego" 
+		pregunta.mensaje_inicio.should == "Fin del Juego" 
 	end 
 
+	it "obtener Indice pregunta" do 
+		pregunta = Preguntas.new
+		pregunta.indice_pregunta.should==0
+	end 
 
 
 end

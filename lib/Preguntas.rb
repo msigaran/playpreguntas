@@ -36,14 +36,17 @@ class Preguntas
 		if  respuestasel==respuesta
 			@TodasRespuestascorrecta=1
 			respuestacorrecta
+			envioEvaluacionrespuesta
 		else
 			@TodasRespuestascorrecta=0
 			puntajecero
+			envioEvaluacionrespuesta
 		end 
+		
 	end
 
 	def envioEvaluacionrespuesta
-		nuevapregunta
+		#nuevapregunta
 		return @TodasRespuestascorrecta
 	end
 	
@@ -51,6 +54,9 @@ class Preguntas
 		return @TodasRespuestas[@@IndicePregunta]
 	end
 	def nuevapregunta
+		if @@IndicePregunta==6 then
+		    ganador
+		end 
 		return @@IndicePregunta=@@IndicePregunta+1
 	end
 	
@@ -59,9 +65,6 @@ class Preguntas
 	end 
 
 	def respuestacorrecta
-		if @puntos==6 then
-		    ganador
-		end 
 		return @puntos+=1
 	end 
 
@@ -71,9 +74,21 @@ class Preguntas
 	end 
 
 	def ganador 
-		@Inicio="Has ganado el Juego"
+		@Inicio="Fin del Juego"
 		mensaje_inicio 
 	end 
 
+	def finjuego 
+		if @@IndicePregunta==6 then
+			@Inicio="Fin del Juego"
+		end
+		mensaje_inicio 
+	end 
+
+
+
+	def indice_pregunta 
+		return @@IndicePregunta
+	end 
 
 end
